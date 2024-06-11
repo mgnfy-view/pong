@@ -22,9 +22,13 @@ import {
     BALL_TAG,
     GAME_TAG,
     MENU_TAG,
+    PADDLE_HIT_SOUND,
 } from "../utils/constants";
 
 function gameScene(paddleLeftScore, paddleRightScore) {
+    // load the paddle hit sound
+    k.loadSound(PADDLE_HIT_SOUND, "./audioAssets/paddle-hit.mp3");
+
     // Define layers
     const background = k.add([k.fixed(), k.z(0)]);
     const game = k.add([k.fixed(), k.z(1)]);
@@ -124,11 +128,13 @@ function gameScene(paddleLeftScore, paddleRightScore) {
 
     // Handle collision with left paddle
     k.onCollide(BALL_TAG, PADDLE_LEFT_TAG, () => {
+        k.play(PADDLE_HIT_SOUND);
         ball.horizontalSpeed *= -1;
     });
 
     // Handle collision with right paddle
     k.onCollide(BALL_TAG, PADDLE_RIGHT_TAG, () => {
+        k.play(PADDLE_HIT_SOUND);
         ball.horizontalSpeed *= -1;
     });
 

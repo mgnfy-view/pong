@@ -9,7 +9,7 @@ import {
     GAME_TAG,
 } from "../utils/constants";
 
-function menuScene() {
+async function menuScene() {
     // Add the game's title
     k.add([
         k.text("Pong".toUpperCase()),

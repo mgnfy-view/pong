@@ -76,6 +76,9 @@ const SCALE_INFO_TEXT = 0.4;
 const GAME_TAG = "game";
 const MENU_TAG = "menu";
 
+// Sound asset tag
+const PADDLE_HIT_SOUND = "paddle-hit";
+
 export {
     CANVAS_WIDTH,
     CANVAS_HEIGHT,
@@ -107,4 +110,5 @@ export {
     SCALE_INFO_TEXT,
     GAME_TAG,
     MENU_TAG,
+    PADDLE_HIT_SOUND,
 };
